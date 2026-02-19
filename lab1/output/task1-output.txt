@@ -1,0 +1,281 @@
+Lab files already exist.
+
+=== Compiling hello.c firmware ===
+rm -f hello.elf hello.hex
+# /data/picorv32-utils/riscv32imc/bin/riscv32-unknown-elf-gcc -march=rv32imc -S hello.c -o hello.s
+# /data/picorv32-utils/riscv32imc/bin/riscv32-unknown-elf-gcc -c hello.s -o hello.o
+# /data/picorv32-utils/riscv32imc/bin/riscv32-unknown-elf-gcc -march=rv32imc -S uart.c -o uart.s
+# /data/picorv32-utils/riscv32imc/bin/riscv32-unknown-elf-gcc -c uart.s -o uart.o
+# /data/picorv32-utils/riscv32imc/bin/riscv32-unknown-elf-ld -T linkerscript.ld hello.o uart.o -o hello.elf
+# /data/picorv32-utils/riscv32imc/bin/riscv32-unknown-elf-ld hello.o uart.o -o hello.elf
+/data/picorv32-utils/riscv32imc/bin/riscv32-unknown-elf-gcc -O0 -march=rv32imc \
+	-T linkerscript.ld \
+	-nostdlib \
+	-o hello.elf \
+	hello.c uart.c
+/data/picorv32-utils/riscv32imc/bin/riscv32-unknown-elf-objcopy -O verilog hello.elf hello.hex
+
+=== Compilation successful ===
+
+=== Running QuestaSim simulation ===
+QuestaSim-64 vmap 2020.4 Lib Mapping Utility 2020.10 Oct 13 2020
+vmap work workLib 
+Modifying modelsim.ini
+QuestaSim-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+Start time: 16:59:15 on Feb 19,2026
+vlog /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v 
+-- Compiling module SRAM1RW1024x8
+-- Compiling module SRAM1RW1024x8_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(101): (vlog-2263) Redefinition of macro: 'numAddr' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(13), old value '10', new value '7') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(102): (vlog-2263) Redefinition of macro: 'numWords' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(14), old value '1024', new value '128') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(103): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(15), old value '8', new value '46') .
+-- Compiling module SRAM1RW128x46
+-- Compiling module SRAM1RW128x46_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(229): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(103), old value '46', new value '48') .
+-- Compiling module SRAM1RW128x48
+-- Compiling module SRAM1RW128x48_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(357): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(229), old value '48', new value '8') .
+-- Compiling module SRAM1RW128x8
+-- Compiling module SRAM1RW128x8_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(443): (vlog-2263) Redefinition of macro: 'numAddr' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(355), old value '7', new value '8') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(444): (vlog-2263) Redefinition of macro: 'numWords' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(356), old value '128', new value '256') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(445): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(357), old value '8', new value '128') .
+-- Compiling module SRAM1RW256x128
+-- Compiling module SRAM1RW256x128_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(653): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(445), old value '128', new value '32') .
+-- Compiling module SRAM1RW256x32
+-- Compiling module SRAM1RW256x32_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(765): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(653), old value '32', new value '46') .
+-- Compiling module SRAM1RW256x46
+-- Compiling module SRAM1RW256x46_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(891): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(765), old value '46', new value '48') .
+-- Compiling module SRAM1RW256x48
+-- Compiling module SRAM1RW256x48_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1019): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(891), old value '48', new value '8') .
+-- Compiling module SRAM1RW256x8
+-- Compiling module SRAM1RW256x8_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1105): (vlog-2263) Redefinition of macro: 'numAddr' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1017), old value '8', new value '5') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1106): (vlog-2263) Redefinition of macro: 'numWords' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1018), old value '256', new value '32') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1107): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1019), old value '8', new value '50') .
+-- Compiling module SRAM1RW32x50
+-- Compiling module SRAM1RW32x50_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1235): (vlog-2263) Redefinition of macro: 'numAddr' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1105), old value '5', new value '9') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1236): (vlog-2263) Redefinition of macro: 'numWords' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1106), old value '32', new value '512') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1237): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1107), old value '50', new value '128') .
+-- Compiling module SRAM1RW512x128
+-- Compiling module SRAM1RW512x128_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1445): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1237), old value '128', new value '32') .
+-- Compiling module SRAM1RW512x32
+-- Compiling module SRAM1RW512x32_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1557): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1445), old value '32', new value '8') .
+-- Compiling module SRAM1RW512x8
+-- Compiling module SRAM1RW512x8_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1643): (vlog-2263) Redefinition of macro: 'numAddr' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1555), old value '9', new value '6') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1644): (vlog-2263) Redefinition of macro: 'numWords' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1556), old value '512', new value '64') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1645): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1557), old value '8', new value '128') .
+-- Compiling module SRAM1RW64x128
+-- Compiling module SRAM1RW64x128_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1853): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1645), old value '128', new value '32') .
+-- Compiling module SRAM1RW64x32
+-- Compiling module SRAM1RW64x32_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1965): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1853), old value '32', new value '34') .
+-- Compiling module SRAM1RW64x34
+-- Compiling module SRAM1RW64x34_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2079): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1965), old value '34', new value '8') .
+-- Compiling module SRAM1RW64x8
+-- Compiling module SRAM1RW64x8_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2165): (vlog-2263) Redefinition of macro: 'numAddr' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2077), old value '6', new value '7') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2166): (vlog-2263) Redefinition of macro: 'numWords' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2078), old value '64', new value '128') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2167): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2079), old value '8', new value '16') .
+-- Compiling module SRAM2RW128x16
+-- Compiling module SRAM2RW128x16_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2288): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2167), old value '16', new value '32') .
+-- Compiling module SRAM2RW128x32
+-- Compiling module SRAM2RW128x32_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2425): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2288), old value '32', new value '4') .
+-- Compiling module SRAM2RW128x4
+-- Compiling module SRAM2RW128x4_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2534): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2425), old value '4', new value '8') .
+-- Compiling module SRAM2RW128x8
+-- Compiling module SRAM2RW128x8_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2645): (vlog-2263) Redefinition of macro: 'numAddr' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2532), old value '7', new value '4') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2646): (vlog-2263) Redefinition of macro: 'numWords' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2533), old value '128', new value '16') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2647): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2534), old value '8', new value '16') .
+-- Compiling module SRAM2RW16x16
+-- Compiling module SRAM2RW16x16_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2768): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2647), old value '16', new value '32') .
+-- Compiling module SRAM2RW16x32
+-- Compiling module SRAM2RW16x32_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2905): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2768), old value '32', new value '4') .
+-- Compiling module SRAM2RW16x4
+-- Compiling module SRAM2RW16x4_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3014): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2905), old value '4', new value '8') .
+-- Compiling module SRAM2RW16x8
+-- Compiling module SRAM2RW16x8_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3125): (vlog-2263) Redefinition of macro: 'numAddr' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3012), old value '4', new value '5') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3126): (vlog-2263) Redefinition of macro: 'numWords' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3013), old value '16', new value '32') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3127): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3014), old value '8', new value '16') .
+-- Compiling module SRAM2RW32x16
+-- Compiling module SRAM2RW32x16_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3248): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3127), old value '16', new value '22') .
+-- Compiling module SRAM2RW32x22
+-- Compiling module SRAM2RW32x22_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3375): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3248), old value '22', new value '32') .
+-- Compiling module SRAM2RW32x32
+-- Compiling module SRAM2RW32x32_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3512): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3375), old value '32', new value '39') .
+-- Compiling module SRAM2RW32x39
+-- Compiling module SRAM2RW32x39_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3656): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3512), old value '39', new value '4') .
+-- Compiling module SRAM2RW32x4
+-- Compiling module SRAM2RW32x4_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3765): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3656), old value '4', new value '8') .
+-- Compiling module SRAM2RW32x8
+-- Compiling module SRAM2RW32x8_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3876): (vlog-2263) Redefinition of macro: 'numAddr' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3763), old value '5', new value '6') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3877): (vlog-2263) Redefinition of macro: 'numWords' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3764), old value '32', new value '64') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3878): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3765), old value '8', new value '16') .
+-- Compiling module SRAM2RW64x16
+-- Compiling module SRAM2RW64x16_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3999): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3878), old value '16', new value '32') .
+-- Compiling module SRAM2RW64x32
+-- Compiling module SRAM2RW64x32_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(4136): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3999), old value '32', new value '4') .
+-- Compiling module SRAM2RW64x4
+-- Compiling module SRAM2RW64x4_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(4245): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(4136), old value '4', new value '8') .
+-- Compiling module SRAM2RW64x8
+-- Compiling module SRAM2RW64x8_1bit
+
+Top level modules:
+	SRAM1RW1024x8
+	SRAM1RW128x46
+	SRAM1RW128x48
+	SRAM1RW128x8
+	SRAM1RW256x128
+	SRAM1RW256x32
+	SRAM1RW256x46
+	SRAM1RW256x48
+	SRAM1RW256x8
+	SRAM1RW32x50
+	SRAM1RW512x128
+	SRAM1RW512x32
+	SRAM1RW512x8
+	SRAM1RW64x128
+	SRAM1RW64x32
+	SRAM1RW64x34
+	SRAM1RW64x8
+	SRAM2RW128x16
+	SRAM2RW128x32
+	SRAM2RW128x4
+	SRAM2RW128x8
+	SRAM2RW16x16
+	SRAM2RW16x32
+	SRAM2RW16x4
+	SRAM2RW16x8
+	SRAM2RW32x16
+	SRAM2RW32x22
+	SRAM2RW32x32
+	SRAM2RW32x39
+	SRAM2RW32x4
+	SRAM2RW32x8
+	SRAM2RW64x16
+	SRAM2RW64x32
+	SRAM2RW64x4
+	SRAM2RW64x8
+End time: 16:59:15 on Feb 19,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 52
+QuestaSim-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+Start time: 16:59:15 on Feb 19,2026
+vlog ../src/design/accelerator.v ../../src/design/simpleuart.v ../../src/design/spimemio.v ../../src/design/picosoc.v ../../src/design/picorv32.v ../../src/design/et4351.v "+incdir+../src/include" -timescale 1ns/1ps 
+-- Compiling module accelerator
+-- Compiling module simpleuart
+-- Compiling module spimemio
+-- Compiling module spimemio_xfer
+-- Compiling module picosoc
+-- Compiling module picosoc_mem
+-- Compiling module picorv32
+** Warning: ../../src/design/picorv32.v(386): (vlog-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+** Warning: ../../src/design/picorv32.v(388): (vlog-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+-- Compiling module picorv32_regs
+-- Compiling module picorv32_pcpi_mul
+-- Compiling module picorv32_pcpi_fast_mul
+-- Compiling module picorv32_pcpi_div
+-- Compiling module picorv32_axi
+-- Compiling module picorv32_axi_adapter
+-- Compiling module picorv32_wb
+-- Compiling module et4351
+-- Compiling module bidir_buf
+
+Top level modules:
+	picorv32_regs
+	picorv32_axi
+	picorv32_wb
+	et4351
+End time: 16:59:16 on Feb 19,2026, Elapsed time: 0:00:01
+Errors: 0, Warnings: 2
+QuestaSim-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+Start time: 16:59:16 on Feb 19,2026
+vlog ../src/testbench/spiflash.v "+define+BEHAV=1" -timescale 1ns/1ps 
+-- Compiling module spiflash
+
+Top level modules:
+	spiflash
+End time: 16:59:16 on Feb 19,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+QuestaSim-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+Start time: 16:59:16 on Feb 19,2026
+vlog -sv ../src/testbench/et4351_tb.sv "+incdir+../../src/include" "+define+BEHAV=1" -timescale 1ns/1ps 
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+End time: 16:59:16 on Feb 19,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 2020.4
+
+# vsim testbench -c -do "run.cmd" -t 100ps "+firmware=../firmware/hello.hex" 
+# Start time: 16:59:18 on Feb 19,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: ../../src/design/picorv32.v(386): (vopt-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# ** Warning: ../../src/design/picorv32.v(388): (vopt-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# ** Warning: ../../src/design/picorv32.v(386): (vopt-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# ** Warning: ../../src/design/picorv32.v(388): (vopt-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# ** Warning: ../../src/design/picorv32.v(386): (vopt-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# ** Warning: ../../src/design/picorv32.v(388): (vopt-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=6.
+# //  Questa Sim-64
+# //  Version 2020.4 linux_x86_64 Oct 13 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.testbench(fast)
+# Loading work.et4351(fast)
+# Loading work.spiflash(fast)
+# do run.cmd
+##################################################
+# Start of Testbench 						        
+##################################################
+# Hello, World!
+# Latency in Clock Cycles:       26554
+##################################################
+# End of Testbench 						        
+##################################################
+# ** Note: $finish    : ../src/testbench/et4351_tb.sv(116)
+#    Time: 265550 ns  Iteration: 1  Instance: /testbench
+# End time: 16:59:20 on Feb 19,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 6
+
+=== Task 1 complete! ===
