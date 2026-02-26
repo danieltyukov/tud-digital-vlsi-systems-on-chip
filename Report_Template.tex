@@ -1,0 +1,139 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+
+% Define colors
+\definecolor{tudelft}{RGB}{0, 166, 214}
+\definecolor{lightgray}{RGB}{240, 240, 240}
+
+% Header and footer setup
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{tudelft}\leaders\hrule height \headrulewidth\hfill}}
+\fancyhead[L]{ET4351 Lab Report}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{\textcolor{gray}{Delft University of Technology - Faculty of EEMCS - Department of Microelectronics}}
+
+% Title
+\title{
+\vspace{-1.5cm}
+\textcolor{tudelft}{\textbf{ET4351 Digital VLSI SoC \\ Lab Report \\(Feedback Only, Not Graded)}}
+\vspace{0.5cm}
+}
+\author{Student Name: \underline{\hspace{5cm}} \\Student Number: \underline{\hspace{5cm}}}
+\date{Due Date: March 6, 2026}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\section*{Lab Report}
+
+%% ============================================================
+%% LAB 1: Project Baseline with PicoSoC
+%% ============================================================
+
+\section{Lab 1: Project Baseline with PicoSoC}
+
+\subsection*{Question 1.1: For Task 1, provide a detailed, step-by-step explanation of the testbench's operation.}
+
+\subsubsection*{(a) How does PicoSoC load the firmware? (Hint: Check \texttt{spiflash.v})}
+
+\begin{tcolorbox}[colback=white, colframe=black, width=\textwidth, height=0.3\textheight, title=Answer 1.1(a)]
+% This area is for students to fill in their answers.
+\end{tcolorbox}
+
+\subsubsection*{(b) How does PicoSoC display the ``Hello, World!'' message on QuestaSim's command line? Explain to which memory address the ASCII characters are written by the \texttt{print\_str} function in \texttt{hello.c} and how PicoSoC sends out the characters to the testbench through the \texttt{ser\_tx} port. (Hint: Check \texttt{simpleuart.v}, \texttt{picosoc.v}, \texttt{uart.c}, \texttt{uart.h} and other related files.)}
+
+\begin{tcolorbox}[colback=white, colframe=black, width=\textwidth, height=0.4\textheight, title=Answer 1.1(b)]
+% This area is for students to fill in their answers.
+\end{tcolorbox}
+
+\newpage
+\subsection*{Question 1.2: For Task 2, carefully examine the Verilog code for the dummy accelerator and explain its functionality. How is the accelerator launched? How does it send its output to the RISC-V core with a handshake for robust data exchange?}
+
+\begin{tcolorbox}[colback=white, colframe=black, width=\textwidth, height=0.4\textheight, title=Answer 1.2]
+% This area is for students to fill in their answers.
+\end{tcolorbox}
+
+\subsection*{Question 1.3: In Task 2, closely inspect the \texttt{dummy\_accel.c} file and provide a thorough explanation (by annotating the relevant C and Verilog code) of how the PicoRV32 core interacts with the dummy accelerator, such as sending inputs to and receiving outputs from the accelerator.}
+
+\begin{tcolorbox}[colback=white, colframe=black, width=\textwidth, height=0.4\textheight, title=Answer 1.3]
+% This area is for students to fill in their answers.
+\end{tcolorbox}
+
+\newpage
+\subsection*{Question 1.4: In Task 3, closely inspect the Verilog code for the flash memory (\texttt{spiflash.v}) and explain briefly how the twiddle factors and samples are stored in the flash memory.}
+
+\begin{tcolorbox}[colback=white, colframe=black, width=\textwidth, height=0.35\textheight, title=Answer 1.4]
+% This area is for students to fill in their answers.
+\end{tcolorbox}
+
+\subsection*{Question 1.5: In Task 3, adjust the \texttt{\$CFLAGS} variables using various optimization levels, \texttt{-O0}, \texttt{-O1} or \texttt{-O2} and report the resulting latency in clock cycles.}
+
+\begin{tcolorbox}[colback=white, colframe=black, width=\textwidth, height=0.3\textheight, title=Answer 1.5]
+% This area is for students to fill in their answers.
+\end{tcolorbox}
+
+\newpage
+%% ============================================================
+%% LAB 2: Synthesis and Design Constraints
+%% ============================================================
+
+\section{Lab 2: Synthesis and Design Constraints}
+
+\subsection*{Question 2.1: In Task 1, please inspect the area and timing reports and write down the chip area with the correct units and the slack of the worst path.}
+
+\begin{tcolorbox}[colback=white, colframe=black, width=\textwidth, height=0.3\textheight, title=Answer 2.1]
+% This area is for students to fill in their answers.
+\end{tcolorbox}
+
+\subsection*{Question 2.2: In Task 1, change the clock period in \texttt{et4351.sdc} to 1\,ns (corresponding to 1\,GHz clock frequency) and run the synthesis script again. Inspect the change-of-area and timing report. Please write down your observations and explain the changes in area and timing numbers. (Check out the lecture slides on timing optimization.)}
+
+\begin{tcolorbox}[colback=white, colframe=black, width=\textwidth, height=0.4\textheight, title=Answer 2.2]
+% This area is for students to fill in their answers.
+\end{tcolorbox}
+
+\newpage
+\subsection*{Question 2.3: Analyze the impact of clock gating on the power efficiency of a PicoSoC by comparing its power consumption with and without clock gating implemented. Please explain how clock gating reduces power consumption in digital integrated circuits. Can it also reduce leakage power?}
+
+\begin{tcolorbox}[colback=white, colframe=black, width=\textwidth, height=0.5\textheight, title=Answer 2.3]
+% This area is for students to fill in their answers.
+\end{tcolorbox}
+
+\newpage
+%% ============================================================
+%% LAB 3: Physical Implementation
+%% ============================================================
+
+\section{Lab 3: Physical Implementation}
+
+\subsection*{Question 3.1: Re-execute the synthesis process for PicoSoC while enabling clock gating, as instructed in Lab 2. Proceed with the physical design process and generate a report containing the power estimation results after the layout. Compare these post-layout power estimation figures with the results obtained without clock gating. Put your post-layout final power estimation report table of PicoSoC below.}
+
+\begin{tcolorbox}[colback=white, colframe=black, width=\textwidth, height=0.5\textheight, title=Answer 3.1]
+% This area is for students to fill in their answers and include power report tables.
+\end{tcolorbox}
+
+\newpage
+\subsection*{Question 3.2: Have you observed that the activity annotation coverage rate of the nets decreases in incremental steps following placement? Can you speculate on possible actions that Innovus might have taken with the design that could explain this behavior?}
+
+\begin{tcolorbox}[colback=white, colframe=black, width=\textwidth, height=0.35\textheight, title=Answer 3.2]
+% This area is for students to fill in their answers.
+\end{tcolorbox}
+
+\subsection*{Question 3.3: Compare the power numbers derived from post-layout activity annotation with those obtained from post-synthesis activity annotation (propagate the two \texttt{.vcd} files through your final design that has gone through all the physical implementation stages). Provide a brief explanation for discrepancies observed between these two sets of numbers.}
+
+\begin{tcolorbox}[colback=white, colframe=black, width=\textwidth, height=0.35\textheight, title=Answer 3.3]
+% This area is for students to fill in their answers.
+\end{tcolorbox}
+
+\end{document}
