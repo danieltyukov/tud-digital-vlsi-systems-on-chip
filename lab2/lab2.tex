@@ -1,0 +1,165 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{array}
+
+% Define colors
+\definecolor{tudelft}{RGB}{0, 166, 214}
+\definecolor{lightgray}{RGB}{240, 240, 240}
+
+% Header and footer setup
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{tudelft}\leaders\hrule height \headrulewidth\hfill}}
+\fancyhead[L]{ET4351 Lab Report}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{\textcolor{gray}{Delft University of Technology - Faculty of EEMCS - Department of Microelectronics}}
+
+% Title
+\title{
+\vspace{-1.5cm}
+\textcolor{tudelft}{\textbf{ET4351 Digital VLSI SoC \\ Lab Report -- Lab 2: Synthesis and Design Constraints}}
+\vspace{0.5cm}
+}
+\author{Student Name: \underline{\hspace{1cm}Daniel Tyukov\hspace{1cm}} \\Student Number: \underline{\hspace{1cm}5714699\hspace{1cm}}}
+\date{Due Date: March 6, 2026}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\section{Lab 2: Synthesis and Design Constraints}
+
+%% ============================================================
+%% QUESTION 2.1
+%% ============================================================
+
+\subsection*{Question 2.1: In Task 1, please inspect the area and timing reports and write down the chip area with the correct units and the slack of the worst path.}
+
+\begin{tcolorbox}[colback=white, colframe=black, width=\textwidth, title=Answer 2.1]
+
+After synthesizing PicoSoC (design \texttt{et4351}) with a clock period of 83.33\,ns ($\sim$12\,MHz) using Cadence Genus and the GPDK 45\,nm standard cell library, the area and timing results are as follows:
+
+\vspace{0.3cm}
+
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+Total cell count & 23{,}128 \\
+Cell area & 96{,}216.4\,$\mu$m$^2$ \\
+Net (interconnect) area & 27{,}140.5\,$\mu$m$^2$ \\
+\textbf{Total chip area} & \textbf{123{,}357.0\,$\mu$m$^2$} \\
+\midrule
+\textbf{Worst-path slack} & \textbf{+31{,}714\,ps} \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.3cm}
+
+The worst timing path runs from \texttt{soc/spimemio/xfer\_io1\_90\_reg/CK} through the SPI flash bidirectional I/O buffers and into the CPU combinational logic, ending at \texttt{soc/cpu/cpu\_state\_reg\_1\_/D}. The path delay is approximately 51.2\,ns against the 83.33\,ns clock period. Since the slack is positive (+31.7\,ns), timing is comfortably met at 12\,MHz.
+
+The largest contributor to the total area is the SRAM memory macro (\texttt{picosoc\_mem}), which accounts for 34{,}541\,$\mu$m$^2$ (28\% of total area), followed by the PicoRV32 CPU with 76{,}477\,$\mu$m$^2$ (62\%).
+
+\end{tcolorbox}
+
+\newpage
+%% ============================================================
+%% QUESTION 2.2
+%% ============================================================
+
+\subsection*{Question 2.2: In Task 1, change the clock period in \texttt{et4351.sdc} to 1\,ns (corresponding to 1\,GHz clock frequency) and run the synthesis script again. Inspect the change-of-area and timing report. Please write down your observations and explain the changes in area and timing numbers.}
+
+\begin{tcolorbox}[colback=white, colframe=black, width=\textwidth, title=Answer 2.2]
+
+After changing \texttt{CLK\_PERIOD} from 83.33\,ns to 1.0\,ns in \texttt{et4351.sdc} and re-running synthesis:
+
+\vspace{0.2cm}
+
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\textbf{Metric} & \textbf{12 MHz (83.33\,ns)} & \textbf{1 GHz (1\,ns)} \\
+\midrule
+Cell count & 23{,}128 & 30{,}301 (+31.0\%) \\
+Cell area ($\mu$m$^2$) & 96{,}216 & 121{,}746 (+26.5\%) \\
+Net area ($\mu$m$^2$) & 27{,}141 & 34{,}082 (+25.6\%) \\
+\textbf{Total area ($\mu$m$^2$)} & \textbf{123{,}357} & \textbf{155{,}828 (+26.3\%)} \\
+\midrule
+\textbf{Worst-path slack} & \textbf{+31{,}714\,ps} & \textbf{$-$9{,}713\,ps} \\
+Total power & 373\,$\mu$W & 40{,}735\,$\mu$W \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.3cm}
+
+\textbf{Observations:}
+
+\begin{enumerate}
+\item \textbf{Area increase (+26\%):} The synthesis tool attempts to meet the aggressive 1\,GHz target by using larger, faster drive-strength cells (e.g., X4, X8 variants instead of X1, X2) and by duplicating logic to reduce fanout on critical nets. More buffer cells are inserted to meet timing. This is a classic area--speed tradeoff: the tool trades silicon area for reduced propagation delay.
+
+\item \textbf{Timing violation ($-$9{,}713\,ps):} Despite the increased effort, the design cannot meet the 1\,GHz target. The worst path has a delay of approximately 10.3\,ns, roughly 10$\times$ slower than the 1\,ns clock period. The critical path runs from the flash I/O pins through the SPI controller and into the CPU state machine. This path includes off-chip bidirectional I/O buffers with large delays that the synthesis tool cannot optimize further, as these are constrained by the external interface timing.
+
+\item \textbf{Power increase ($\sim$109$\times$):} Power scales dramatically because dynamic power is proportional to frequency ($P \propto f \cdot C \cdot V^2$). The 83$\times$ frequency increase is compounded by the larger cells (higher capacitance) used during timing optimization.
+\end{enumerate}
+
+\vspace{0.1cm}
+The result demonstrates that PicoSoC in 45\,nm technology cannot achieve 1\,GHz operation. The design's critical path through the SPI flash interface fundamentally limits the maximum achievable frequency.
+
+\end{tcolorbox}
+
+\newpage
+%% ============================================================
+%% QUESTION 2.3
+%% ============================================================
+
+\subsection*{Question 2.3: Analyze the impact of clock gating on the power efficiency of a PicoSoC by comparing its power consumption with and without clock gating implemented. Please explain how clock gating reduces power consumption in digital integrated circuits. Can it also reduce leakage power?}
+
+\begin{tcolorbox}[colback=white, colframe=black, width=\textwidth, title=Answer 2.3]
+
+PicoSoC was re-synthesized with clock gating enabled (\texttt{lp\_insert\_clock\_gating = true}) at the original 83.33\,ns clock period. Genus inserted 104 clock-gating cells, gating 2{,}563 out of 2{,}795 flip-flops (91.7\%), with an average toggle saving of 82.7\%.
+
+\vspace{0.2cm}
+
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Metric} & \textbf{Without CG} & \textbf{With CG} & \textbf{Change} \\
+\midrule
+Cell count & 23{,}128 & 20{,}195 & $-$12.7\% \\
+Total area ($\mu$m$^2$) & 123{,}357 & 112{,}247 & $-$9.0\% \\
+\midrule
+Register power ($\mu$W) & 129.2 & 49.6 & $-$61.6\% \\
+Logic power ($\mu$W) & 274.7 & 101.8 & $-$62.9\% \\
+Clock power ($\mu$W) & 0.011 & 4.72 & $+$42{,}809\% \\
+\textbf{Total power ($\mu$W)} & \textbf{373.0} & \textbf{105.2} & \textbf{$-$71.8\%} \\
+\midrule
+Leakage power ($\mu$W) & 1.611 & 1.442 & $-$10.5\% \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.3cm}
+
+\textbf{How clock gating reduces power:}
+
+Clock gating reduces dynamic power by preventing the clock signal from toggling at flip-flops that do not need to update their value in a given cycle. In a standard design, the clock tree distributes the clock to every register on every cycle, even when the register's input data has not changed. Since the clock network is one of the largest contributors to switching activity ($P_{\text{dynamic}} = \alpha \cdot C \cdot V^2 \cdot f$), gating the clock when a register is idle eliminates unnecessary transitions, reducing both the internal power of the flip-flops and the switching power in the clock tree feeding them.
+
+In PicoSoC, clock gating achieves a 71.8\% total power reduction because the PicoRV32 CPU has many registers (e.g., the register file, pipeline registers, multiplier/divider state) that are idle during most clock cycles.
+
+\vspace{0.2cm}
+
+\textbf{Can clock gating reduce leakage power?}
+
+Clock gating provides a modest reduction in leakage power ($-$10.5\% in this case). This occurs indirectly: clock-gated registers have their inputs held constant, which means fewer internal nodes toggle and fewer transistors experience short-circuit leakage. Additionally, clock gating can enable the synthesis tool to use smaller, lower-leakage cells for gated registers since timing pressure on those paths is reduced. However, the primary mechanism for leakage reduction is power gating (turning off $V_{DD}$ to idle blocks entirely), not clock gating. Clock gating is primarily a dynamic power optimization technique.
+
+\end{tcolorbox}
+
+\end{document}
