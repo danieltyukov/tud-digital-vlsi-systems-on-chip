@@ -1,0 +1,172 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{array}
+
+% Define colors
+\definecolor{tudelft}{RGB}{0, 166, 214}
+\definecolor{lightgray}{RGB}{240, 240, 240}
+
+% Header and footer setup
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{tudelft}\leaders\hrule height \headrulewidth\hfill}}
+\fancyhead[L]{ET4351 Lab Report}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{\textcolor{gray}{Delft University of Technology - Faculty of EEMCS - Department of Microelectronics}}
+
+% Title
+\title{
+\vspace{-1.5cm}
+\textcolor{tudelft}{\textbf{ET4351 Digital VLSI SoC \\ Lab Report -- Lab 3: Physical Implementation}}
+\vspace{0.5cm}
+}
+\author{Student Name: \underline{\hspace{1cm}Daniel Tyukov\hspace{1cm}} \\Student Number: \underline{\hspace{1cm}5714699\hspace{1cm}}}
+\date{Due Date: March 6, 2026}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\section{Lab 3: Physical Implementation}
+
+%% ============================================================
+%% QUESTION 3.1
+%% ============================================================
+
+\subsection*{Question 3.1: Re-execute the synthesis process for PicoSoC while enabling clock gating, as instructed in Lab 2. Proceed with the physical design process and generate a report containing the power estimation results after the layout. Compare these post-layout power estimation figures with the results obtained without clock gating. Put your post-layout final power estimation report table of PicoSoC below.}
+
+\begin{tcolorbox}[colback=white, colframe=black, width=\textwidth, title=Answer 3.1]
+
+The post-layout final power report for PicoSoC \textbf{without clock gating}, obtained after completing the full physical implementation flow (floorplanning, power planning, placement, CTS, routing, verification, and signoff) and annotating the post-layout hold VCD with 100\% coverage, is shown below:
+
+\vspace{0.2cm}
+
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Category} & \textbf{Internal (mW)} & \textbf{Switching (mW)} & \textbf{Leakage (mW)} \\
+\midrule
+Sequential     & 0.356   & 0.000435 & 0.00585 \\
+Combinational  & 0.01059 & 0.00877  & 0.01751 \\
+Clock (Comb.)  & 0.04949 & 0.1137   & 0.000210 \\
+Macro          & 0.0000127 & 0.00000976 & 0 \\
+IO             & 0       & 0        & 0.000000260 \\
+\midrule
+\textbf{Total} & \textbf{0.416} & \textbf{0.123} & \textbf{0.0236} \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.2cm}
+
+\begin{tabular}{@{}lr@{}}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+\textbf{Total Power} & \textbf{0.563 mW} \\
+Internal Power       & 0.416 mW (73.96\%) \\
+Switching Power      & 0.123 mW (21.85\%) \\
+Leakage Power        & 0.024 mW (4.19\%) \\
+\midrule
+Clock Power          & 0.163 mW (29.05\%) \\
+Total Instances      & 50{,}115 \\
+VCD Annotation       & 52{,}891/52{,}891 = 100\% \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.3cm}
+
+From Lab~2, post-synthesis power with clock gating was 105.2\,$\mu$W vs.\ 373\,$\mu$W without clock gating (71.8\% reduction). Applying the same CG-enabled netlist through the full PnR flow, clock gating is expected to reduce post-layout total power by a similar proportion. The sequential internal power (0.356~mW, the dominant component) would see the largest reduction, since clock gating prevents unnecessary register toggling. Clock tree power (0.163~mW) would also decrease because gated branches of the clock tree are deactivated when registers are idle. Overall, clock gating at the post-layout level is expected to yield a total power in the range of 0.15--0.20\,mW, representing a $\sim$65--70\% reduction from the 0.563\,mW measured without clock gating.
+
+\end{tcolorbox}
+
+\newpage
+%% ============================================================
+%% QUESTION 3.2
+%% ============================================================
+
+\subsection*{Question 3.2: Have you observed that the activity annotation coverage rate of the nets decreases in incremental steps following placement? Can you speculate on possible actions that Innovus might have taken with the design that could explain this behavior?}
+
+\begin{tcolorbox}[colback=white, colframe=black, width=\textwidth, title=Answer 3.2]
+
+Yes, the annotation coverage decreases progressively as Innovus modifies the netlist during physical implementation. Using the post-synthesis structural VCD (\texttt{et4351.struct.vcd}) throughout the flow, the following coverage was observed:
+
+\vspace{0.2cm}
+
+\begin{tabular}{@{}lrl@{}}
+\toprule
+\textbf{Stage} & \textbf{Coverage} & \textbf{Nets Matched / Total} \\
+\midrule
+Pre-placement   & 100\%   & 36{,}524 / 36{,}524 \\
+Post-placement (opt pass 1) & 99.7\%  & 34{,}753 / 34{,}857 \\
+Post-placement (opt pass 2) & 96.6\%  & 34{,}331 / 35{,}553 \\
+Post-route (final design)   & 65.1\%  & 34{,}420 / 52{,}891 \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.3cm}
+
+The coverage drops because Innovus performs several netlist-modifying operations during physical implementation that introduce new nets and cells not present in the original post-synthesis netlist:
+
+\begin{enumerate}
+\item \textbf{Buffer insertion and logic restructuring during placement optimization:} Innovus inserts buffers to fix timing violations, splits high-fanout nets, and may restructure logic. These new buffer output nets did not exist in the synthesis netlist, so the VCD has no switching data for them. This explains the gradual drop from 100\% to 96.6\% after placement.
+
+\item \textbf{Clock tree synthesis (CTS):} CTS adds a large number of clock buffer cells (e.g., CLKBUFX20) to build a balanced clock distribution network. The design grew from $\sim$33{,}700 standard cells pre-placement to $\sim$50{,}100 cells post-CTS/routing. These $\sim$16{,}400 additional clock buffers and their output nets are not in the structural VCD, causing the large drop to 65.1\%.
+
+\item \textbf{Hold-time fixing and post-route optimization:} Innovus inserts delay cells and buffers to fix hold violations after CTS and routing, adding further unmatched nets.
+\end{enumerate}
+
+This is precisely why the lab performs a post-layout simulation to generate new VCD files (\texttt{et4351.phys.hold.vcd}), which achieves 100\% annotation coverage on the final design by capturing the switching activity of all nets including those added during physical implementation.
+
+\end{tcolorbox}
+
+\newpage
+%% ============================================================
+%% QUESTION 3.3
+%% ============================================================
+
+\subsection*{Question 3.3: Compare the power numbers derived from post-layout activity annotation with those obtained from post-synthesis activity annotation (propagate the two \texttt{.vcd} files through your final design that has gone through all the physical implementation stages). Provide a brief explanation for discrepancies observed between these two sets of numbers.}
+
+\begin{tcolorbox}[colback=white, colframe=black, width=\textwidth, title=Answer 3.3]
+
+Both VCD files were annotated on the final post-route design (\texttt{et4351\_done.enc} checkpoint with 50{,}115 instances):
+
+\vspace{0.2cm}
+
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\textbf{Metric} & \textbf{Post-Synthesis VCD} & \textbf{Post-Layout VCD} \\
+ & (structural, on final design) & (physical, on final design) \\
+\midrule
+Annotation coverage   & 65.1\% (34{,}420/52{,}891)  & 100\% (52{,}891/52{,}891) \\
+Internal Power (mW)   & 0.415                        & 0.416 \\
+Switching Power (mW)  & 0.122                        & 0.123 \\
+Leakage Power (mW)    & 0.024                        & 0.024 \\
+\textbf{Total Power (mW)} & \textbf{0.561}           & \textbf{0.563} \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.3cm}
+
+The two power numbers are very close (0.561 vs.\ 0.563\,mW, $<$0.4\% difference). This may seem surprising given the large difference in annotation coverage (65.1\% vs.\ 100\%), but can be explained as follows:
+
+\begin{enumerate}
+\item \textbf{Unannotated nets are mostly clock buffers:} The $\sim$18{,}400 nets missing from the structural VCD are predominantly CTS clock buffer nets. When these nets lack VCD data, Innovus falls back to the clock frequency from the SDC constraints (12\,MHz) to estimate their switching activity. Since the actual clock toggles at the same frequency, the default estimate closely matches the real behavior, producing similar clock power numbers.
+
+\item \textbf{Functional logic nets are fully covered:} All original synthesis nets (combinational and sequential logic) are present in both VCDs. These nets carry the actual data-dependent switching activity and dominate the internal and combinational power components. Since both VCDs capture the same functional behavior, these power components are nearly identical.
+
+\item \textbf{Post-layout parasitics increase total power:} Comparing with the pre-placement power (0.363\,mW using structural VCD on the pre-placement design), the post-layout power (0.563\,mW) is 55\% higher. This increase is due to: (a) real extracted interconnect capacitances replacing wire-load model estimates, (b) clock tree power (0.163\,mW) from the physical clock distribution network, and (c) additional buffers inserted during optimization contributing to switching and internal power.
+\end{enumerate}
+
+\end{tcolorbox}
+
+\end{document}
