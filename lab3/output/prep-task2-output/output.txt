@@ -1,0 +1,1498 @@
+
+=== Step 1: Run post-synthesis (structural) simulation ===
+run_struct_sim.sh: line 7: quiet: command not found
+QuestaSim-64 vmap 2020.4 Lib Mapping Utility 2020.10 Oct 13 2020
+vmap work workLib 
+Modifying modelsim.ini
+QuestaSim-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+Start time: 17:49:01 on Mar 06,2026
+vlog /data/Cadence/gpdk045_v60/gsclib045_svt_v4.7/gsclib045/verilog/slow_vdd1v0_basicCells.v 
+-- Compiling module ACHCONX2
+-- Compiling module ADDFHX1
+-- Compiling module ADDFHX2
+-- Compiling module ADDFHX4
+-- Compiling module ADDFHXL
+-- Compiling module ADDFX1
+-- Compiling module ADDFX2
+-- Compiling module ADDFX4
+-- Compiling module ADDFXL
+-- Compiling module ADDHX1
+-- Compiling module ADDHX2
+-- Compiling module ADDHX4
+-- Compiling module ADDHXL
+-- Compiling module AND2X1
+-- Compiling module AND2X2
+-- Compiling module AND2X4
+-- Compiling module AND2X6
+-- Compiling module AND2X8
+-- Compiling module AND2XL
+-- Compiling module AND3X1
+-- Compiling module AND3X2
+-- Compiling module AND3X4
+-- Compiling module AND3X6
+-- Compiling module AND3X8
+-- Compiling module AND3XL
+-- Compiling module AND4X1
+-- Compiling module AND4X2
+-- Compiling module AND4X4
+-- Compiling module AND4X6
+-- Compiling module AND4X8
+-- Compiling module AND4XL
+-- Compiling module ANTENNA
+-- Compiling module AO21X1
+-- Compiling module AO21X2
+-- Compiling module AO21X4
+-- Compiling module AO21XL
+-- Compiling module AO22X1
+-- Compiling module AO22X2
+-- Compiling module AO22X4
+-- Compiling module AO22XL
+-- Compiling module AOI211X1
+-- Compiling module AOI211X2
+-- Compiling module AOI211X4
+-- Compiling module AOI211XL
+-- Compiling module AOI21X1
+-- Compiling module AOI21X2
+-- Compiling module AOI21X4
+-- Compiling module AOI21XL
+-- Compiling module AOI221X1
+-- Compiling module AOI221X2
+-- Compiling module AOI221X4
+-- Compiling module AOI221XL
+-- Compiling module AOI222X1
+-- Compiling module AOI222X2
+-- Compiling module AOI222X4
+-- Compiling module AOI222XL
+-- Compiling module AOI22X1
+-- Compiling module AOI22X2
+-- Compiling module AOI22X4
+-- Compiling module AOI22XL
+-- Compiling module AOI2BB1X1
+-- Compiling module AOI2BB1X2
+-- Compiling module AOI2BB1X4
+-- Compiling module AOI2BB1XL
+-- Compiling module AOI2BB2X1
+-- Compiling module AOI2BB2X2
+-- Compiling module AOI2BB2X4
+-- Compiling module AOI2BB2XL
+-- Compiling module AOI31X1
+-- Compiling module AOI31X2
+-- Compiling module AOI31X4
+-- Compiling module AOI31XL
+-- Compiling module AOI32X1
+-- Compiling module AOI32X2
+-- Compiling module AOI32X4
+-- Compiling module AOI32XL
+-- Compiling module AOI33X1
+-- Compiling module AOI33X2
+-- Compiling module AOI33X4
+-- Compiling module AOI33XL
+-- Compiling module BMXIX2
+-- Compiling module BMXIX4
+-- Compiling module BUFX12
+-- Compiling module BUFX16
+-- Compiling module BUFX2
+-- Compiling module BUFX20
+-- Compiling module BUFX3
+-- Compiling module BUFX4
+-- Compiling module BUFX6
+-- Compiling module BUFX8
+-- Compiling module CLKAND2X12
+-- Compiling module CLKAND2X2
+-- Compiling module CLKAND2X3
+-- Compiling module CLKAND2X4
+-- Compiling module CLKAND2X6
+-- Compiling module CLKAND2X8
+-- Compiling module CLKBUFX12
+-- Compiling module CLKBUFX16
+-- Compiling module CLKBUFX2
+-- Compiling module CLKBUFX20
+-- Compiling module CLKBUFX3
+-- Compiling module CLKBUFX4
+-- Compiling module CLKBUFX6
+-- Compiling module CLKBUFX8
+-- Compiling module CLKINVX1
+-- Compiling module CLKINVX12
+-- Compiling module CLKINVX16
+-- Compiling module CLKINVX2
+-- Compiling module CLKINVX20
+-- Compiling module CLKINVX3
+-- Compiling module CLKINVX4
+-- Compiling module CLKINVX6
+-- Compiling module CLKINVX8
+-- Compiling module CLKMX2X12
+-- Compiling module CLKMX2X2
+-- Compiling module CLKMX2X3
+-- Compiling module CLKMX2X4
+-- Compiling module CLKMX2X6
+-- Compiling module CLKMX2X8
+-- Compiling module CLKXOR2X1
+-- Compiling module CLKXOR2X2
+-- Compiling module CLKXOR2X4
+-- Compiling module CLKXOR2X8
+-- Compiling module DECAP10
+-- Compiling module DECAP2
+-- Compiling module DECAP3
+-- Compiling module DECAP4
+-- Compiling module DECAP5
+-- Compiling module DECAP6
+-- Compiling module DECAP7
+-- Compiling module DECAP8
+-- Compiling module DECAP9
+-- Compiling module DFFHQX1
+-- Compiling module DFFHQX2
+-- Compiling module DFFHQX4
+-- Compiling module DFFHQX8
+-- Compiling module DFFNSRX1
+-- Compiling module DFFNSRX2
+-- Compiling module DFFNSRX4
+-- Compiling module DFFNSRXL
+-- Compiling module DFFQX1
+-- Compiling module DFFQX2
+-- Compiling module DFFQX4
+-- Compiling module DFFQXL
+-- Compiling module DFFRHQX1
+-- Compiling module DFFRHQX2
+-- Compiling module DFFRHQX4
+-- Compiling module DFFRHQX8
+-- Compiling module DFFRX1
+-- Compiling module DFFRX2
+-- Compiling module DFFRX4
+-- Compiling module DFFRXL
+-- Compiling module DFFSHQX1
+-- Compiling module DFFSHQX2
+-- Compiling module DFFSHQX4
+-- Compiling module DFFSHQX8
+-- Compiling module DFFSRHQX1
+-- Compiling module DFFSRHQX2
+-- Compiling module DFFSRHQX4
+-- Compiling module DFFSRHQX8
+-- Compiling module DFFSRX1
+-- Compiling module DFFSRX2
+-- Compiling module DFFSRX4
+-- Compiling module DFFSRXL
+-- Compiling module DFFSX1
+-- Compiling module DFFSX2
+-- Compiling module DFFSX4
+-- Compiling module DFFSXL
+-- Compiling module DFFTRX1
+-- Compiling module DFFTRX2
+-- Compiling module DFFTRX4
+-- Compiling module DFFTRXL
+-- Compiling module DFFX1
+-- Compiling module DFFX2
+-- Compiling module DFFX4
+-- Compiling module DFFXL
+-- Compiling module DLY1X1
+-- Compiling module DLY1X4
+-- Compiling module DLY2X1
+-- Compiling module DLY2X4
+-- Compiling module DLY3X1
+-- Compiling module DLY3X4
+-- Compiling module DLY4X1
+-- Compiling module DLY4X4
+-- Compiling module EDFFHQX1
+-- Compiling module EDFFHQX2
+-- Compiling module EDFFHQX4
+-- Compiling module EDFFHQX8
+-- Compiling module EDFFTRX1
+-- Compiling module EDFFTRX2
+-- Compiling module EDFFTRX4
+-- Compiling module EDFFTRXL
+-- Compiling module EDFFX1
+-- Compiling module EDFFX2
+-- Compiling module EDFFX4
+-- Compiling module EDFFXL
+-- Compiling module HOLDX1
+-- Compiling module INVX1
+-- Compiling module INVX12
+-- Compiling module INVX16
+-- Compiling module INVX2
+-- Compiling module INVX20
+-- Compiling module INVX3
+-- Compiling module INVX4
+-- Compiling module INVX6
+-- Compiling module INVX8
+-- Compiling module INVXL
+-- Compiling module MDFFHQX1
+-- Compiling module MDFFHQX2
+-- Compiling module MDFFHQX4
+-- Compiling module MDFFHQX8
+-- Compiling module MX2X1
+-- Compiling module MX2X2
+-- Compiling module MX2X4
+-- Compiling module MX2X6
+-- Compiling module MX2X8
+-- Compiling module MX2XL
+-- Compiling module MX3X1
+-- Compiling module MX3X2
+-- Compiling module MX3X4
+-- Compiling module MX3XL
+-- Compiling module MX4X1
+-- Compiling module MX4X2
+-- Compiling module MX4X4
+-- Compiling module MX4XL
+-- Compiling module MXI2X1
+-- Compiling module MXI2X2
+-- Compiling module MXI2X4
+-- Compiling module MXI2X6
+-- Compiling module MXI2X8
+-- Compiling module MXI2XL
+-- Compiling module MXI3X1
+-- Compiling module MXI3X2
+-- Compiling module MXI3X4
+-- Compiling module MXI3XL
+-- Compiling module MXI4X1
+-- Compiling module MXI4X2
+-- Compiling module MXI4X4
+-- Compiling module MXI4XL
+-- Compiling module NAND2BX1
+-- Compiling module NAND2BX2
+-- Compiling module NAND2BX4
+-- Compiling module NAND2BXL
+-- Compiling module NAND2X1
+-- Compiling module NAND2X2
+-- Compiling module NAND2X4
+-- Compiling module NAND2X6
+-- Compiling module NAND2X8
+-- Compiling module NAND2XL
+-- Compiling module NAND3BX1
+-- Compiling module NAND3BX2
+-- Compiling module NAND3BX4
+-- Compiling module NAND3BXL
+-- Compiling module NAND3X1
+-- Compiling module NAND3X2
+-- Compiling module NAND3X4
+-- Compiling module NAND3X6
+-- Compiling module NAND3X8
+-- Compiling module NAND3XL
+-- Compiling module NAND4BBX1
+-- Compiling module NAND4BBX2
+-- Compiling module NAND4BBX4
+-- Compiling module NAND4BBXL
+-- Compiling module NAND4BX1
+-- Compiling module NAND4BX2
+-- Compiling module NAND4BX4
+-- Compiling module NAND4BXL
+-- Compiling module NAND4X1
+-- Compiling module NAND4X2
+-- Compiling module NAND4X4
+-- Compiling module NAND4X6
+-- Compiling module NAND4X8
+-- Compiling module NAND4XL
+-- Compiling module NOR2BX1
+-- Compiling module NOR2BX2
+-- Compiling module NOR2BX4
+-- Compiling module NOR2BXL
+-- Compiling module NOR2X1
+-- Compiling module NOR2X2
+-- Compiling module NOR2X4
+-- Compiling module NOR2X6
+-- Compiling module NOR2X8
+-- Compiling module NOR2XL
+-- Compiling module NOR3BX1
+-- Compiling module NOR3BX2
+-- Compiling module NOR3BX4
+-- Compiling module NOR3BXL
+-- Compiling module NOR3X1
+-- Compiling module NOR3X2
+-- Compiling module NOR3X4
+-- Compiling module NOR3X6
+-- Compiling module NOR3X8
+-- Compiling module NOR3XL
+-- Compiling module NOR4BBX1
+-- Compiling module NOR4BBX2
+-- Compiling module NOR4BBX4
+-- Compiling module NOR4BBXL
+-- Compiling module NOR4BX1
+-- Compiling module NOR4BX2
+-- Compiling module NOR4BX4
+-- Compiling module NOR4BXL
+-- Compiling module NOR4X1
+-- Compiling module NOR4X2
+-- Compiling module NOR4X4
+-- Compiling module NOR4X6
+-- Compiling module NOR4X8
+-- Compiling module NOR4XL
+-- Compiling module OA21X1
+-- Compiling module OA21X2
+-- Compiling module OA21X4
+-- Compiling module OA21XL
+-- Compiling module OA22X1
+-- Compiling module OA22X2
+-- Compiling module OA22X4
+-- Compiling module OA22XL
+-- Compiling module OAI211X1
+-- Compiling module OAI211X2
+-- Compiling module OAI211X4
+-- Compiling module OAI211XL
+-- Compiling module OAI21X1
+-- Compiling module OAI21X2
+-- Compiling module OAI21X4
+-- Compiling module OAI21XL
+-- Compiling module OAI221X1
+-- Compiling module OAI221X2
+-- Compiling module OAI221X4
+-- Compiling module OAI221XL
+-- Compiling module OAI222X1
+-- Compiling module OAI222X2
+-- Compiling module OAI222X4
+-- Compiling module OAI222XL
+-- Compiling module OAI22X1
+-- Compiling module OAI22X2
+-- Compiling module OAI22X4
+-- Compiling module OAI22XL
+-- Compiling module OAI2BB1X1
+-- Compiling module OAI2BB1X2
+-- Compiling module OAI2BB1X4
+-- Compiling module OAI2BB1XL
+-- Compiling module OAI2BB2X1
+-- Compiling module OAI2BB2X2
+-- Compiling module OAI2BB2X4
+-- Compiling module OAI2BB2XL
+-- Compiling module OAI31X1
+-- Compiling module OAI31X2
+-- Compiling module OAI31X4
+-- Compiling module OAI31XL
+-- Compiling module OAI32X1
+-- Compiling module OAI32X2
+-- Compiling module OAI32X4
+-- Compiling module OAI32XL
+-- Compiling module OAI33X1
+-- Compiling module OAI33X2
+-- Compiling module OAI33X4
+-- Compiling module OAI33XL
+-- Compiling module OR2X1
+-- Compiling module OR2X2
+-- Compiling module OR2X4
+-- Compiling module OR2X6
+-- Compiling module OR2X8
+-- Compiling module OR2XL
+-- Compiling module OR3X1
+-- Compiling module OR3X2
+-- Compiling module OR3X4
+-- Compiling module OR3X6
+-- Compiling module OR3X8
+-- Compiling module OR3XL
+-- Compiling module OR4X1
+-- Compiling module OR4X2
+-- Compiling module OR4X4
+-- Compiling module OR4X6
+-- Compiling module OR4X8
+-- Compiling module OR4XL
+-- Compiling module SDFFHQX1
+-- Compiling module SDFFHQX2
+-- Compiling module SDFFHQX4
+-- Compiling module SDFFHQX8
+-- Compiling module SDFFNSRX1
+-- Compiling module SDFFNSRX2
+-- Compiling module SDFFNSRX4
+-- Compiling module SDFFNSRXL
+-- Compiling module SDFFQX1
+-- Compiling module SDFFQX2
+-- Compiling module SDFFQX4
+-- Compiling module SDFFQXL
+-- Compiling module SDFFRHQX1
+-- Compiling module SDFFRHQX2
+-- Compiling module SDFFRHQX4
+-- Compiling module SDFFRHQX8
+-- Compiling module SDFFRX1
+-- Compiling module SDFFRX2
+-- Compiling module SDFFRX4
+-- Compiling module SDFFRXL
+-- Compiling module SDFFSHQX1
+-- Compiling module SDFFSHQX2
+-- Compiling module SDFFSHQX4
+-- Compiling module SDFFSHQX8
+-- Compiling module SDFFSRHQX1
+-- Compiling module SDFFSRHQX2
+-- Compiling module SDFFSRHQX4
+-- Compiling module SDFFSRHQX8
+-- Compiling module SDFFSRX1
+-- Compiling module SDFFSRX2
+-- Compiling module SDFFSRX4
+-- Compiling module SDFFSRXL
+-- Compiling module SDFFSX1
+-- Compiling module SDFFSX2
+-- Compiling module SDFFSX4
+-- Compiling module SDFFSXL
+-- Compiling module SDFFTRX1
+-- Compiling module SDFFTRX2
+-- Compiling module SDFFTRX4
+-- Compiling module SDFFTRXL
+-- Compiling module SDFFX1
+-- Compiling module SDFFX2
+-- Compiling module SDFFX4
+-- Compiling module SDFFXL
+-- Compiling module SEDFFHQX1
+-- Compiling module SEDFFHQX2
+-- Compiling module SEDFFHQX4
+-- Compiling module SEDFFHQX8
+-- Compiling module SEDFFTRX1
+-- Compiling module SEDFFTRX2
+-- Compiling module SEDFFTRX4
+-- Compiling module SEDFFTRXL
+-- Compiling module SEDFFX1
+-- Compiling module SEDFFX2
+-- Compiling module SEDFFX4
+-- Compiling module SEDFFXL
+-- Compiling module SMDFFHQX1
+-- Compiling module SMDFFHQX2
+-- Compiling module SMDFFHQX4
+-- Compiling module SMDFFHQX8
+-- Compiling module TBUFX1
+-- Compiling module TBUFX12
+-- Compiling module TBUFX16
+-- Compiling module TBUFX2
+-- Compiling module TBUFX20
+-- Compiling module TBUFX3
+-- Compiling module TBUFX4
+-- Compiling module TBUFX6
+-- Compiling module TBUFX8
+-- Compiling module TBUFXL
+-- Compiling module TIEHI
+-- Compiling module TIELO
+-- Compiling module TLATNCAX12
+-- Compiling module TLATNCAX16
+-- Compiling module TLATNCAX2
+-- Compiling module TLATNCAX20
+-- Compiling module TLATNCAX3
+-- Compiling module TLATNCAX4
+-- Compiling module TLATNCAX6
+-- Compiling module TLATNCAX8
+-- Compiling module TLATNSRX1
+-- Compiling module TLATNSRX2
+-- Compiling module TLATNSRX4
+-- Compiling module TLATNSRXL
+-- Compiling module TLATNTSCAX12
+-- Compiling module TLATNTSCAX16
+-- Compiling module TLATNTSCAX2
+-- Compiling module TLATNTSCAX20
+-- Compiling module TLATNTSCAX3
+-- Compiling module TLATNTSCAX4
+-- Compiling module TLATNTSCAX6
+-- Compiling module TLATNTSCAX8
+-- Compiling module TLATNX1
+-- Compiling module TLATNX2
+-- Compiling module TLATNX4
+-- Compiling module TLATNXL
+-- Compiling module TLATSRX1
+-- Compiling module TLATSRX2
+-- Compiling module TLATSRX4
+-- Compiling module TLATSRXL
+-- Compiling module TLATX1
+-- Compiling module TLATX2
+-- Compiling module TLATX4
+-- Compiling module TLATXL
+-- Compiling module XNOR2X1
+-- Compiling module XNOR2X2
+-- Compiling module XNOR2X4
+-- Compiling module XNOR2XL
+-- Compiling module XNOR3X1
+-- Compiling module XNOR3XL
+-- Compiling module XOR2X1
+-- Compiling module XOR2X2
+-- Compiling module XOR2X4
+-- Compiling module XOR2XL
+-- Compiling module XOR3X1
+-- Compiling module XOR3XL
+-- Compiling UDP altos_latch
+-- Compiling UDP altos_dff_err
+-- Compiling UDP altos_dff
+-- Compiling UDP altos_dff_r_err
+-- Compiling UDP altos_dff_r
+-- Compiling UDP altos_dff_s_err
+-- Compiling UDP altos_dff_s
+-- Compiling UDP altos_dff_sr_err
+-- Compiling UDP altos_dff_sr_0
+-- Compiling UDP altos_dff_sr_1
+-- Compiling UDP altos_latch_r
+-- Compiling UDP altos_latch_s
+-- Compiling UDP altos_latch_sr_0
+-- Compiling UDP altos_latch_sr_1
+
+Top level modules:
+	ACHCONX2
+	ADDFHX1
+	ADDFHX2
+	ADDFHX4
+	ADDFHXL
+	ADDFX1
+	ADDFX2
+	ADDFX4
+	ADDFXL
+	ADDHX1
+	ADDHX2
+	ADDHX4
+	ADDHXL
+	AND2X1
+	AND2X2
+	AND2X4
+	AND2X6
+	AND2X8
+	AND2XL
+	AND3X1
+	AND3X2
+	AND3X4
+	AND3X6
+	AND3X8
+	AND3XL
+	AND4X1
+	AND4X2
+	AND4X4
+	AND4X6
+	AND4X8
+	AND4XL
+	ANTENNA
+	AO21X1
+	AO21X2
+	AO21X4
+	AO21XL
+	AO22X1
+	AO22X2
+	AO22X4
+	AO22XL
+	AOI211X1
+	AOI211X2
+	AOI211X4
+	AOI211XL
+	AOI21X1
+	AOI21X2
+	AOI21X4
+	AOI21XL
+	AOI221X1
+	AOI221X2
+	AOI221X4
+	AOI221XL
+	AOI222X1
+	AOI222X2
+	AOI222X4
+	AOI222XL
+	AOI22X1
+	AOI22X2
+	AOI22X4
+	AOI22XL
+	AOI2BB1X1
+	AOI2BB1X2
+	AOI2BB1X4
+	AOI2BB1XL
+	AOI2BB2X1
+	AOI2BB2X2
+	AOI2BB2X4
+	AOI2BB2XL
+	AOI31X1
+	AOI31X2
+	AOI31X4
+	AOI31XL
+	AOI32X1
+	AOI32X2
+	AOI32X4
+	AOI32XL
+	AOI33X1
+	AOI33X2
+	AOI33X4
+	AOI33XL
+	BMXIX2
+	BMXIX4
+	BUFX12
+	BUFX16
+	BUFX2
+	BUFX20
+	BUFX3
+	BUFX4
+	BUFX6
+	BUFX8
+	CLKAND2X12
+	CLKAND2X2
+	CLKAND2X3
+	CLKAND2X4
+	CLKAND2X6
+	CLKAND2X8
+	CLKBUFX12
+	CLKBUFX16
+	CLKBUFX2
+	CLKBUFX20
+	CLKBUFX3
+	CLKBUFX4
+	CLKBUFX6
+	CLKBUFX8
+	CLKINVX1
+	CLKINVX12
+	CLKINVX16
+	CLKINVX2
+	CLKINVX20
+	CLKINVX3
+	CLKINVX4
+	CLKINVX6
+	CLKINVX8
+	CLKMX2X12
+	CLKMX2X2
+	CLKMX2X3
+	CLKMX2X4
+	CLKMX2X6
+	CLKMX2X8
+	CLKXOR2X1
+	CLKXOR2X2
+	CLKXOR2X4
+	CLKXOR2X8
+	DECAP10
+	DECAP2
+	DECAP3
+	DECAP4
+	DECAP5
+	DECAP6
+	DECAP7
+	DECAP8
+	DECAP9
+	DFFHQX1
+	DFFHQX2
+	DFFHQX4
+	DFFHQX8
+	DFFNSRX1
+	DFFNSRX2
+	DFFNSRX4
+	DFFNSRXL
+	DFFQX1
+	DFFQX2
+	DFFQX4
+	DFFQXL
+	DFFRHQX1
+	DFFRHQX2
+	DFFRHQX4
+	DFFRHQX8
+	DFFRX1
+	DFFRX2
+	DFFRX4
+	DFFRXL
+	DFFSHQX1
+	DFFSHQX2
+	DFFSHQX4
+	DFFSHQX8
+	DFFSRHQX1
+	DFFSRHQX2
+	DFFSRHQX4
+	DFFSRHQX8
+	DFFSRX1
+	DFFSRX2
+	DFFSRX4
+	DFFSRXL
+	DFFSX1
+	DFFSX2
+	DFFSX4
+	DFFSXL
+	DFFTRX1
+	DFFTRX2
+	DFFTRX4
+	DFFTRXL
+	DFFX1
+	DFFX2
+	DFFX4
+	DFFXL
+	DLY1X1
+	DLY1X4
+	DLY2X1
+	DLY2X4
+	DLY3X1
+	DLY3X4
+	DLY4X1
+	DLY4X4
+	EDFFHQX1
+	EDFFHQX2
+	EDFFHQX4
+	EDFFHQX8
+	EDFFTRX1
+	EDFFTRX2
+	EDFFTRX4
+	EDFFTRXL
+	EDFFX1
+	EDFFX2
+	EDFFX4
+	EDFFXL
+	HOLDX1
+	INVX1
+	INVX12
+	INVX16
+	INVX2
+	INVX20
+	INVX3
+	INVX4
+	INVX6
+	INVX8
+	INVXL
+	MDFFHQX1
+	MDFFHQX2
+	MDFFHQX4
+	MDFFHQX8
+	MX2X1
+	MX2X2
+	MX2X4
+	MX2X6
+	MX2X8
+	MX2XL
+	MX3X1
+	MX3X2
+	MX3X4
+	MX3XL
+	MX4X1
+	MX4X2
+	MX4X4
+	MX4XL
+	MXI2X1
+	MXI2X2
+	MXI2X4
+	MXI2X6
+	MXI2X8
+	MXI2XL
+	MXI3X1
+	MXI3X2
+	MXI3X4
+	MXI3XL
+	MXI4X1
+	MXI4X2
+	MXI4X4
+	MXI4XL
+	NAND2BX1
+	NAND2BX2
+	NAND2BX4
+	NAND2BXL
+	NAND2X1
+	NAND2X2
+	NAND2X4
+	NAND2X6
+	NAND2X8
+	NAND2XL
+	NAND3BX1
+	NAND3BX2
+	NAND3BX4
+	NAND3BXL
+	NAND3X1
+	NAND3X2
+	NAND3X4
+	NAND3X6
+	NAND3X8
+	NAND3XL
+	NAND4BBX1
+	NAND4BBX2
+	NAND4BBX4
+	NAND4BBXL
+	NAND4BX1
+	NAND4BX2
+	NAND4BX4
+	NAND4BXL
+	NAND4X1
+	NAND4X2
+	NAND4X4
+	NAND4X6
+	NAND4X8
+	NAND4XL
+	NOR2BX1
+	NOR2BX2
+	NOR2BX4
+	NOR2BXL
+	NOR2X1
+	NOR2X2
+	NOR2X4
+	NOR2X6
+	NOR2X8
+	NOR2XL
+	NOR3BX1
+	NOR3BX2
+	NOR3BX4
+	NOR3BXL
+	NOR3X1
+	NOR3X2
+	NOR3X4
+	NOR3X6
+	NOR3X8
+	NOR3XL
+	NOR4BBX1
+	NOR4BBX2
+	NOR4BBX4
+	NOR4BBXL
+	NOR4BX1
+	NOR4BX2
+	NOR4BX4
+	NOR4BXL
+	NOR4X1
+	NOR4X2
+	NOR4X4
+	NOR4X6
+	NOR4X8
+	NOR4XL
+	OA21X1
+	OA21X2
+	OA21X4
+	OA21XL
+	OA22X1
+	OA22X2
+	OA22X4
+	OA22XL
+	OAI211X1
+	OAI211X2
+	OAI211X4
+	OAI211XL
+	OAI21X1
+	OAI21X2
+	OAI21X4
+	OAI21XL
+	OAI221X1
+	OAI221X2
+	OAI221X4
+	OAI221XL
+	OAI222X1
+	OAI222X2
+	OAI222X4
+	OAI222XL
+	OAI22X1
+	OAI22X2
+	OAI22X4
+	OAI22XL
+	OAI2BB1X1
+	OAI2BB1X2
+	OAI2BB1X4
+	OAI2BB1XL
+	OAI2BB2X1
+	OAI2BB2X2
+	OAI2BB2X4
+	OAI2BB2XL
+	OAI31X1
+	OAI31X2
+	OAI31X4
+	OAI31XL
+	OAI32X1
+	OAI32X2
+	OAI32X4
+	OAI32XL
+	OAI33X1
+	OAI33X2
+	OAI33X4
+	OAI33XL
+	OR2X1
+	OR2X2
+	OR2X4
+	OR2X6
+	OR2X8
+	OR2XL
+	OR3X1
+	OR3X2
+	OR3X4
+	OR3X6
+	OR3X8
+	OR3XL
+	OR4X1
+	OR4X2
+	OR4X4
+	OR4X6
+	OR4X8
+	OR4XL
+	SDFFHQX1
+	SDFFHQX2
+	SDFFHQX4
+	SDFFHQX8
+	SDFFNSRX1
+	SDFFNSRX2
+	SDFFNSRX4
+	SDFFNSRXL
+	SDFFQX1
+	SDFFQX2
+	SDFFQX4
+	SDFFQXL
+	SDFFRHQX1
+	SDFFRHQX2
+	SDFFRHQX4
+	SDFFRHQX8
+	SDFFRX1
+	SDFFRX2
+	SDFFRX4
+	SDFFRXL
+	SDFFSHQX1
+	SDFFSHQX2
+	SDFFSHQX4
+	SDFFSHQX8
+	SDFFSRHQX1
+	SDFFSRHQX2
+	SDFFSRHQX4
+	SDFFSRHQX8
+	SDFFSRX1
+	SDFFSRX2
+	SDFFSRX4
+	SDFFSRXL
+	SDFFSX1
+	SDFFSX2
+	SDFFSX4
+	SDFFSXL
+	SDFFTRX1
+	SDFFTRX2
+	SDFFTRX4
+	SDFFTRXL
+	SDFFX1
+	SDFFX2
+	SDFFX4
+	SDFFXL
+	SEDFFHQX1
+	SEDFFHQX2
+	SEDFFHQX4
+	SEDFFHQX8
+	SEDFFTRX1
+	SEDFFTRX2
+	SEDFFTRX4
+	SEDFFTRXL
+	SEDFFX1
+	SEDFFX2
+	SEDFFX4
+	SEDFFXL
+	SMDFFHQX1
+	SMDFFHQX2
+	SMDFFHQX4
+	SMDFFHQX8
+	TBUFX1
+	TBUFX12
+	TBUFX16
+	TBUFX2
+	TBUFX20
+	TBUFX3
+	TBUFX4
+	TBUFX6
+	TBUFX8
+	TBUFXL
+	TIEHI
+	TIELO
+	TLATNCAX12
+	TLATNCAX16
+	TLATNCAX2
+	TLATNCAX20
+	TLATNCAX3
+	TLATNCAX4
+	TLATNCAX6
+	TLATNCAX8
+	TLATNSRX1
+	TLATNSRX2
+	TLATNSRX4
+	TLATNSRXL
+	TLATNTSCAX12
+	TLATNTSCAX16
+	TLATNTSCAX2
+	TLATNTSCAX20
+	TLATNTSCAX3
+	TLATNTSCAX4
+	TLATNTSCAX6
+	TLATNTSCAX8
+	TLATNX1
+	TLATNX2
+	TLATNX4
+	TLATNXL
+	TLATSRX1
+	TLATSRX2
+	TLATSRX4
+	TLATSRXL
+	TLATX1
+	TLATX2
+	TLATX4
+	TLATXL
+	XNOR2X1
+	XNOR2X2
+	XNOR2X4
+	XNOR2XL
+	XNOR3X1
+	XNOR3XL
+	XOR2X1
+	XOR2X2
+	XOR2X4
+	XOR2XL
+	XOR3X1
+	XOR3XL
+End time: 17:49:03 on Mar 06,2026, Elapsed time: 0:00:02
+Errors: 0, Warnings: 0
+QuestaSim-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+Start time: 17:49:03 on Mar 06,2026
+vlog /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v 
+-- Compiling module SRAM1RW1024x8
+-- Compiling module SRAM1RW1024x8_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(101): (vlog-2263) Redefinition of macro: 'numAddr' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(13), old value '10', new value '7') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(102): (vlog-2263) Redefinition of macro: 'numWords' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(14), old value '1024', new value '128') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(103): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(15), old value '8', new value '46') .
+-- Compiling module SRAM1RW128x46
+-- Compiling module SRAM1RW128x46_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(229): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(103), old value '46', new value '48') .
+-- Compiling module SRAM1RW128x48
+-- Compiling module SRAM1RW128x48_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(357): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(229), old value '48', new value '8') .
+-- Compiling module SRAM1RW128x8
+-- Compiling module SRAM1RW128x8_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(443): (vlog-2263) Redefinition of macro: 'numAddr' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(355), old value '7', new value '8') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(444): (vlog-2263) Redefinition of macro: 'numWords' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(356), old value '128', new value '256') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(445): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(357), old value '8', new value '128') .
+-- Compiling module SRAM1RW256x128
+-- Compiling module SRAM1RW256x128_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(653): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(445), old value '128', new value '32') .
+-- Compiling module SRAM1RW256x32
+-- Compiling module SRAM1RW256x32_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(765): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(653), old value '32', new value '46') .
+-- Compiling module SRAM1RW256x46
+-- Compiling module SRAM1RW256x46_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(891): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(765), old value '46', new value '48') .
+-- Compiling module SRAM1RW256x48
+-- Compiling module SRAM1RW256x48_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1019): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(891), old value '48', new value '8') .
+-- Compiling module SRAM1RW256x8
+-- Compiling module SRAM1RW256x8_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1105): (vlog-2263) Redefinition of macro: 'numAddr' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1017), old value '8', new value '5') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1106): (vlog-2263) Redefinition of macro: 'numWords' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1018), old value '256', new value '32') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1107): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1019), old value '8', new value '50') .
+-- Compiling module SRAM1RW32x50
+-- Compiling module SRAM1RW32x50_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1235): (vlog-2263) Redefinition of macro: 'numAddr' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1105), old value '5', new value '9') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1236): (vlog-2263) Redefinition of macro: 'numWords' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1106), old value '32', new value '512') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1237): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1107), old value '50', new value '128') .
+-- Compiling module SRAM1RW512x128
+-- Compiling module SRAM1RW512x128_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1445): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1237), old value '128', new value '32') .
+-- Compiling module SRAM1RW512x32
+-- Compiling module SRAM1RW512x32_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1557): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1445), old value '32', new value '8') .
+-- Compiling module SRAM1RW512x8
+-- Compiling module SRAM1RW512x8_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1643): (vlog-2263) Redefinition of macro: 'numAddr' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1555), old value '9', new value '6') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1644): (vlog-2263) Redefinition of macro: 'numWords' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1556), old value '512', new value '64') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1645): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1557), old value '8', new value '128') .
+-- Compiling module SRAM1RW64x128
+-- Compiling module SRAM1RW64x128_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1853): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1645), old value '128', new value '32') .
+-- Compiling module SRAM1RW64x32
+-- Compiling module SRAM1RW64x32_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1965): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1853), old value '32', new value '34') .
+-- Compiling module SRAM1RW64x34
+-- Compiling module SRAM1RW64x34_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2079): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(1965), old value '34', new value '8') .
+-- Compiling module SRAM1RW64x8
+-- Compiling module SRAM1RW64x8_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2165): (vlog-2263) Redefinition of macro: 'numAddr' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2077), old value '6', new value '7') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2166): (vlog-2263) Redefinition of macro: 'numWords' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2078), old value '64', new value '128') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2167): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2079), old value '8', new value '16') .
+-- Compiling module SRAM2RW128x16
+-- Compiling module SRAM2RW128x16_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2288): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2167), old value '16', new value '32') .
+-- Compiling module SRAM2RW128x32
+-- Compiling module SRAM2RW128x32_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2425): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2288), old value '32', new value '4') .
+-- Compiling module SRAM2RW128x4
+-- Compiling module SRAM2RW128x4_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2534): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2425), old value '4', new value '8') .
+-- Compiling module SRAM2RW128x8
+-- Compiling module SRAM2RW128x8_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2645): (vlog-2263) Redefinition of macro: 'numAddr' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2532), old value '7', new value '4') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2646): (vlog-2263) Redefinition of macro: 'numWords' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2533), old value '128', new value '16') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2647): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2534), old value '8', new value '16') .
+-- Compiling module SRAM2RW16x16
+-- Compiling module SRAM2RW16x16_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2768): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2647), old value '16', new value '32') .
+-- Compiling module SRAM2RW16x32
+-- Compiling module SRAM2RW16x32_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2905): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2768), old value '32', new value '4') .
+-- Compiling module SRAM2RW16x4
+-- Compiling module SRAM2RW16x4_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3014): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(2905), old value '4', new value '8') .
+-- Compiling module SRAM2RW16x8
+-- Compiling module SRAM2RW16x8_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3125): (vlog-2263) Redefinition of macro: 'numAddr' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3012), old value '4', new value '5') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3126): (vlog-2263) Redefinition of macro: 'numWords' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3013), old value '16', new value '32') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3127): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3014), old value '8', new value '16') .
+-- Compiling module SRAM2RW32x16
+-- Compiling module SRAM2RW32x16_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3248): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3127), old value '16', new value '22') .
+-- Compiling module SRAM2RW32x22
+-- Compiling module SRAM2RW32x22_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3375): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3248), old value '22', new value '32') .
+-- Compiling module SRAM2RW32x32
+-- Compiling module SRAM2RW32x32_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3512): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3375), old value '32', new value '39') .
+-- Compiling module SRAM2RW32x39
+-- Compiling module SRAM2RW32x39_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3656): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3512), old value '39', new value '4') .
+-- Compiling module SRAM2RW32x4
+-- Compiling module SRAM2RW32x4_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3765): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3656), old value '4', new value '8') .
+-- Compiling module SRAM2RW32x8
+-- Compiling module SRAM2RW32x8_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3876): (vlog-2263) Redefinition of macro: 'numAddr' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3763), old value '5', new value '6') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3877): (vlog-2263) Redefinition of macro: 'numWords' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3764), old value '32', new value '64') .
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3878): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3765), old value '8', new value '16') .
+-- Compiling module SRAM2RW64x16
+-- Compiling module SRAM2RW64x16_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3999): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3878), old value '16', new value '32') .
+-- Compiling module SRAM2RW64x32
+-- Compiling module SRAM2RW64x32_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(4136): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(3999), old value '32', new value '4') .
+-- Compiling module SRAM2RW64x4
+-- Compiling module SRAM2RW64x4_1bit
+** Warning: /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(4245): (vlog-2263) Redefinition of macro: 'wordLength' (previously defined near /data/Cadence/gpdk045_v60/Synopsys_sram/saed32sram.v(4136), old value '4', new value '8') .
+-- Compiling module SRAM2RW64x8
+-- Compiling module SRAM2RW64x8_1bit
+
+Top level modules:
+	SRAM1RW1024x8
+	SRAM1RW128x46
+	SRAM1RW128x48
+	SRAM1RW128x8
+	SRAM1RW256x128
+	SRAM1RW256x32
+	SRAM1RW256x46
+	SRAM1RW256x48
+	SRAM1RW256x8
+	SRAM1RW32x50
+	SRAM1RW512x128
+	SRAM1RW512x32
+	SRAM1RW512x8
+	SRAM1RW64x128
+	SRAM1RW64x32
+	SRAM1RW64x34
+	SRAM1RW64x8
+	SRAM2RW128x16
+	SRAM2RW128x32
+	SRAM2RW128x4
+	SRAM2RW128x8
+	SRAM2RW16x16
+	SRAM2RW16x32
+	SRAM2RW16x4
+	SRAM2RW16x8
+	SRAM2RW32x16
+	SRAM2RW32x22
+	SRAM2RW32x32
+	SRAM2RW32x39
+	SRAM2RW32x4
+	SRAM2RW32x8
+	SRAM2RW64x16
+	SRAM2RW64x32
+	SRAM2RW64x4
+	SRAM2RW64x8
+End time: 17:49:03 on Mar 06,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 52
+QuestaSim-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+Start time: 17:49:03 on Mar 06,2026
+vlog ../synth/outputs/et4351.struct.v -timescale 1ns/1ps 
+-- Compiling module accelerator_fft_LOG_MAX_N32_MEM_WIDTH32_ADDR_WIDTH7
+-- Compiling module accelerator_mem_MEM_DEPTH128
+-- Compiling module accelerator
+-- Compiling module bidir_buf_2035
+-- Compiling module bidir_buf_2036
+-- Compiling module bidir_buf_2037
+-- Compiling module bidir_buf
+-- Compiling module picorv32_pcpi_mul
+-- Compiling module picorv32_pcpi_div
+-- Compiling module picorv32_ENABLE_COUNTERS1_BARREL_SHIFTER1_COMPRESSED_ISA1_ENABLE_MUL1_ENABLE_FAST_MUL0_ENABLE_DIV1_ENABLE_IRQ1_ENABLE_IRQ_QREGS0_PROGADDR_RESET1048576_PROGADDR_IRQ0_STACKADDR1024
+-- Compiling module picosoc_mem_WORDS256
+-- Compiling module simpleuart
+-- Compiling module spimemio_xfer
+-- Compiling module spimemio
+-- Compiling module picosoc
+-- Compiling module et4351
+
+Top level modules:
+	et4351
+End time: 17:49:05 on Mar 06,2026, Elapsed time: 0:00:02
+Errors: 0, Warnings: 0
+QuestaSim-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+Start time: 17:49:05 on Mar 06,2026
+vlog ../src/testbench/spiflash.v "+incdir+../src/" "+define+STRUCT=1" -timescale 1ns/1ps 
+-- Compiling module spiflash
+
+Top level modules:
+	spiflash
+End time: 17:49:05 on Mar 06,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+QuestaSim-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+Start time: 17:49:05 on Mar 06,2026
+vlog -sv ../src/testbench/tb_et4351.sv "+incdir+../src/" "+define+STRUCT=1" -timescale 1ns/1ps 
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+End time: 17:49:05 on Mar 06,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 2020.4
+
+# vsim testbench -c -do "./scripts/run.cmd" -t 100ps -sdfmax "/testbench/dut=../synth/outputs/et4351.struct.sdf" -v2k_int_delays "+nosdferror" "+nosdfwarn" "+firmware=../firmware/accel.hex" "+fft_data=../firmware/fft_data.hex" 
+# Start time: 17:49:06 on Mar 06,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Sim-64
+# //  Version 2020.4 linux_x86_64 Oct 13 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.testbench(fast)
+# Loading work.et4351(fast)
+# Loading work.INVX1(fast)
+# Loading work.CLKINVX8(fast)
+# Loading work.BUFX2(fast)
+# Loading work.OAI2BB1X2(fast)
+# Loading work.OA22X1(fast)
+# Loading work.XNOR2X1(fast)
+# Loading work.OAI21X1(fast)
+# Loading work.AOI21X2(fast)
+# Loading work.AOI21X1(fast)
+# Loading work.OAI21X2(fast)
+# Loading work.OAI2BB1X1(fast)
+# Loading work.NOR2BX2(fast)
+# Loading work.NOR2X2(fast)
+# Loading work.NAND2X2(fast)
+# Loading work.OA21X1(fast)
+# Loading work.OR2X1(fast)
+# Loading work.AND2X1(fast)
+# Loading work.AOI2BB1X1(fast)
+# Loading work.NAND3BX2(fast)
+# Loading work.ADDHX1(fast)
+# Loading work.ADDFX1(fast)
+# Loading work.NOR2X1(fast)
+# Loading work.NAND2BX1(fast)
+# Loading work.OAI32X2(fast)
+# Loading work.OR3X1(fast)
+# Loading work.NAND2BX2(fast)
+# Loading work.ADDFX2(fast)
+# Loading work.AO21X1(fast)
+# Loading work.NAND2X1(fast)
+# Loading work.NOR2X4(fast)
+# Loading work.AOI22X2(fast)
+# Loading work.AOI222X2(fast)
+# Loading work.OR4X1(fast)
+# Loading work.OR3X2(fast)
+# Loading work.CLKINVX4(fast)
+# Loading work.OR3X4(fast)
+# Loading work.AO21X4(fast)
+# Loading work.NAND2BX4(fast)
+# Loading work.AND2X4(fast)
+# Loading work.INVX3(fast)
+# Loading work.OR2X2(fast)
+# Loading work.OR2X4(fast)
+# Loading work.CLKAND2X12(fast)
+# Loading work.INVX2(fast)
+# Loading work.NAND2X4(fast)
+# Loading work.NOR2BX4(fast)
+# Loading work.AND2X2(fast)
+# Loading work.CLKBUFX2(fast)
+# Loading work.DFFHQX1(fast)
+# Loading work.DFFQX2(fast)
+# Loading work.DFFTRX2(fast)
+# Loading work.DFFHQX8(fast)
+# Loading work.DFFHQX4(fast)
+# Loading work.DFFQX4(fast)
+# Loading work.AO22X1(fast)
+# Loading work.AND3XL(fast)
+# Loading work.NOR2BX1(fast)
+# Loading work.NOR3X2(fast)
+# Loading work.MXI2X2(fast)
+# Loading work.OR2X8(fast)
+# Loading work.MX2X1(fast)
+# Loading work.AOI211X2(fast)
+# Loading work.AND2X8(fast)
+# Loading work.CLKINVX16(fast)
+# Loading work.CLKXOR2X1(fast)
+# Loading work.NOR4X4(fast)
+# Loading work.OR2X6(fast)
+# Loading work.CLKINVX6(fast)
+# Loading work.NOR2X6(fast)
+# Loading work.BUFX12(fast)
+# Loading work.INVX20(fast)
+# Loading work.BUFX6(fast)
+# Loading work.CLKINVX12(fast)
+# Loading work.DFFX4(fast)
+# Loading work.DFFX2(fast)
+# Loading work.BUFX20(fast)
+# Loading work.CLKBUFX20(fast)
+# Loading work.BUFX16(fast)
+# Loading work.CLKBUFX12(fast)
+# Loading work.OAI22X2(fast)
+# Loading work.AND2X6(fast)
+# Loading work.XNOR2X4(fast)
+# Loading work.CLKMX2X6(fast)
+# Loading work.CLKMX2X8(fast)
+# Loading work.CLKXOR2X8(fast)
+# Loading work.MXI2X6(fast)
+# Loading work.MXI2X8(fast)
+# Loading work.INVX6(fast)
+# Loading work.CLKINVX3(fast)
+# Loading work.INVX8(fast)
+# Loading work.BUFX4(fast)
+# Loading work.BUFX3(fast)
+# Loading work.AO21X2(fast)
+# Loading work.XNOR2X2(fast)
+# Loading work.CLKMX2X4(fast)
+# Loading work.OAI2BB1X4(fast)
+# Loading work.AOI2BB2X2(fast)
+# Loading work.CLKXOR2X2(fast)
+# Loading work.INVX4(fast)
+# Loading work.CLKBUFX4(fast)
+# Loading work.CLKBUFX3(fast)
+# Loading work.INVXL(fast)
+# Loading work.OR4X4(fast)
+# Loading work.CLKAND2X4(fast)
+# Loading work.NAND2X8(fast)
+# Loading work.EDFFHQX1(fast)
+# Loading work.NOR2X8(fast)
+# Loading work.CLKMX2X2(fast)
+# Loading work.AND3X8(fast)
+# Loading work.CLKMX2X3(fast)
+# Loading work.AND3X1(fast)
+# Loading work.AND3X6(fast)
+# Loading work.NOR4BBX2(fast)
+# Loading work.NOR4X2(fast)
+# Loading work.TBUFX6(fast)
+# Loading work.DFFTRXL(fast)
+# Loading work.NOR4BX2(fast)
+# Loading work.NOR4BX4(fast)
+# Loading work.DFFX1(fast)
+# Loading work.MDFFHQX1(fast)
+# Loading work.EDFFX2(fast)
+# Loading work.AO22X2(fast)
+# Loading work.DFFHQX2(fast)
+# Loading work.DFFQXL(fast)
+# Loading work.DFFRX2(fast)
+# Loading work.EDFFHQX2(fast)
+# Loading work.MDFFHQX2(fast)
+# Loading work.MDFFHQX4(fast)
+# Loading work.AND4X2(fast)
+# Loading work.NAND3X2(fast)
+# Loading work.AOI221X2(fast)
+# Loading work.AND4X1(fast)
+# Loading work.AOI31X2(fast)
+# Loading work.OAI21X4(fast)
+# Loading work.OR3X8(fast)
+# Loading work.OR4X2(fast)
+# Loading work.CLKAND2X2(fast)
+# Loading work.AND3X2(fast)
+# Loading work.OA21X2(fast)
+# Loading work.MXI2X1(fast)
+# Loading work.CLKINVX20(fast)
+# Loading work.CLKBUFX16(fast)
+# Loading work.NOR3BX4(fast)
+# Loading work.NOR3X4(fast)
+# Loading work.MX3X1(fast)
+# Loading work.MX3XL(fast)
+# Loading work.BUFX8(fast)
+# Loading work.CLKBUFX6(fast)
+# Loading work.SRAM1RW256x8(fast)
+# Loading work.DFFSHQX1(fast)
+# Loading work.DFFRHQX4(fast)
+# Loading work.DFFRHQX2(fast)
+# Loading work.DFFRHQX1(fast)
+# Loading work.DFFSHQX8(fast)
+# Loading work.DFFRX1(fast)
+# Loading work.DFFSX1(fast)
+# Loading work.AOI211X4(fast)
+# Loading work.OR3X6(fast)
+# Loading work.AOI2BB1X2(fast)
+# Loading work.OAI31X2(fast)
+# Loading work.DFFSHQX4(fast)
+# Loading work.DFFNSRX1(fast)
+# Loading work.AND3X4(fast)
+# Loading work.DFFSX4(fast)
+# Loading work.DFFRX4(fast)
+# Loading work.spiflash(fast)
+# Loading instances from ../synth/outputs/et4351.struct.sdf
+# Loading timing data from ../synth/outputs/et4351.struct.sdf
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench File: ../src/testbench/tb_et4351.sv
+# do ./scripts/run.cmd
+##################################################
+# Start of Testbench 						        
+##################################################
+# Time domain input: 
+# [
+#   0,
+#   825,
+#   1615,
+#   2340,
+#   2969,
+#   3476,
+#   3841,
+#   4049,
+#   4091,
+#   3965,
+#   3677,
+#   3239,
+#   2668,
+#   1988,
+#   1226,
+#   414,
+#   -414,
+#   -1226,
+#   -1988,
+#   -2668,
+#   -3239,
+#   -3677,
+#   -3965,
+#   -4091,
+#   -4049,
+#   -3841,
+#   -3476,
+#   -2969,
+#   -2340,
+#   -1615,
+#   -825,
+#   0
+# ]
+# 
+# Frequency domain output: 
+# [
+#   0 + 0j,
+#   6307 + -64061j,
+#   -565 + 2832j,
+#   -470 + 1545j,
+#   -444 + 1070j,
+#   -435 + 804j,
+#   -427 + 636j,
+#   -421 + 508j,
+#   -419 + 418j,
+#   -420 + 342j,
+#   -417 + 278j,
+#   -418 + 223j,
+#   -416 + 172j,
+#   -418 + 126j,
+#   -416 + 82j,
+#   -445 + 37j,
+#   -418 + 0j,
+#   -417 + -45j,
+#   -417 + -82j,
+#   -420 + -127j,
+#   -416 + -172j,
+#   -417 + -224j,
+#   -417 + -278j,
+#   -409 + -340j,
+#   -419 + -418j,
+#   -422 + -520j,
+#   -425 + -636j,
+#   -432 + -805j,
+#   -444 + -1070j,
+#   -466 + -1542j,
+#   -564 + -2832j,
+#   6327 + 64079j
+# ]
+# Complete latency in Clock Cycles:           2600653
+# Accelerator start time in Clock Cycles:         400825
+# Accelerator runtime in Clock Cycles:           1887
+# Complete latency in Milliseconds:       216.712414
+# Accelerator start time in Milliseconds:    33.400747
+# Accelerator runtime in Milliseconds:    0.157244
+##################################################
+# End of Testbench 						        
+##################################################
+# ** Note: $finish    : ../src/testbench/tb_et4351.sv(138)
+#    Time: 216894543600 ps  Iteration: 1  Instance: /testbench
+# End time: 17:50:34 on Mar 06,2026, Elapsed time: 0:01:28
+# Errors: 0, Warnings: 0
+
+=== Step 2: Verify simulation output ===
+Test Passed ^_^ Outputs and Gold are identical!!!
+
+=== Task 2 complete! ===
